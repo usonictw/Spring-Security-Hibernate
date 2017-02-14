@@ -25,7 +25,7 @@
         </authentication-provider>
     </authentication-manager>
 
-    <beans:bean id="userDetailServiceImpl" class="service.UserDetailsServiceImpl">
+    <beans:bean id="userDetailServiceImpl" class="module4.service.UserDetailsServiceImpl">
 
     </beans:bean>
 

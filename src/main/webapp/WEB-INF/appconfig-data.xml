@@ -28,7 +28,7 @@
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
        <property name="dataSource" ref="dataSource"/>
-       <property name="packagesToScan" value="pojo"/>
+       <property name="packagesToScan" value="module4.pojo"/>
        <property name="jpaVendorAdapter">
            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
        </property>
@@ -43,8 +43,8 @@
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
-    <context:component-scan base-package="controller"/>
+    <context:component-scan base-package="module4.controller"/>
     <tx:annotation-driven/>
-    <jpa:repositories base-package="dao"/>
+    <jpa:repositories base-package="module4.dao"/>
 
 </beans>
