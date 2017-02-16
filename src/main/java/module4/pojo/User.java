@@ -21,9 +21,9 @@ public class User {
     @Transient
     private String confirmPassword;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "roles_id"))
+    @ManyToMany
+    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roleSet;
 
     public User() {
@@ -69,38 +69,7 @@ public class User {
         this.roleSet = roleSet;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
 
-        User user = (User) o;
-
-        if (!userName.equals(user.userName)) return false;
-        if (!password.equals(user.password)) return false;
-        if (!confirmPassword.equals(user.confirmPassword)) return false;
-        return roleSet.equals(user.roleSet);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = userName.hashCode();
-        result = 31 * result + password.hashCode();
-        result = 31 * result + confirmPassword.hashCode();
-        result = 31 * result + roleSet.hashCode();
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                ", confirmPassword='" + confirmPassword + '\'' +
-                ", roleSet=" + roleSet +
-                '}';
-    }
 }
 
 

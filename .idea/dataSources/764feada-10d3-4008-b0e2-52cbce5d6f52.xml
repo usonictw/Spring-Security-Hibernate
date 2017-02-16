@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-02-02.09:16:52.098</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1096</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-02-16.15:04:17.149</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1120</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -40,8 +40,8 @@
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="11" parent="3" name="user_roles_id_seq">
-      <ObjectId>41000</ObjectId>
-      <StateNumber>1096</StateNumber>
+      <ObjectId>49164</ObjectId>
+      <StateNumber>1120</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="12" parent="3" name="users_id_seq">
@@ -55,15 +55,15 @@
     </table>
     <table id="14" parent="3" name="roles">
       <ObjectId>40994</ObjectId>
-      <StateNumber>1096</StateNumber>
+      <StateNumber>1120</StateNumber>
     </table>
     <table id="15" parent="3" name="user_roles">
-      <ObjectId>41002</ObjectId>
-      <StateNumber>1096</StateNumber>
+      <ObjectId>49166</ObjectId>
+      <StateNumber>1120</StateNumber>
     </table>
     <table id="16" parent="3" name="users">
       <ObjectId>40986</ObjectId>
-      <StateNumber>1096</StateNumber>
+      <StateNumber>1120</StateNumber>
     </table>
     <column id="17" parent="13" name="id">
       <Position>1</Position>
@@ -129,91 +129,71 @@
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1096</StateNumber>
+      <StateNumber>1120</StateNumber>
       <DefaultExpression>nextval(&apos;user_roles_id_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="28" parent="15" name="user_id">
       <Position>2</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1096</StateNumber>
+      <StateNumber>1120</StateNumber>
     </column>
     <column id="29" parent="15" name="role_id">
       <Position>3</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1096</StateNumber>
+      <StateNumber>1120</StateNumber>
     </column>
     <index id="30" parent="15" name="user_roles_pkey">
-      <ObjectId>41006</ObjectId>
+      <ObjectId>49170</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="31" parent="15" name="user_roles_user_id_key">
-      <ObjectId>41008</ObjectId>
-      <ColNames>user_id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <index id="32" parent="15" name="user_roles_role_id_key">
-      <ObjectId>41010</ObjectId>
-      <ColNames>role_id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="33" parent="15" name="user_roles_pkey">
-      <ObjectId>41007</ObjectId>
+    <key id="31" parent="15" name="user_roles_pkey">
+      <ObjectId>49171</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>user_roles_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="34" parent="15" name="user_roles_user_id_key">
-      <ObjectId>41009</ObjectId>
-      <ColNames>user_id</ColNames>
-      <UnderlyingIndexName>user_roles_user_id_key</UnderlyingIndexName>
-    </key>
-    <key id="35" parent="15" name="user_roles_role_id_key">
-      <ObjectId>41011</ObjectId>
-      <ColNames>role_id</ColNames>
-      <UnderlyingIndexName>user_roles_role_id_key</UnderlyingIndexName>
-    </key>
-    <foreign-key id="36" parent="15" name="user_roles_user_id_fkey">
-      <ObjectId>41012</ObjectId>
+    <foreign-key id="32" parent="15" name="user_roles_user_id_fkey">
+      <ObjectId>49172</ObjectId>
       <ColNames>user_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="37" parent="15" name="user_roles_role_id_fkey">
-      <ObjectId>41017</ObjectId>
+    <foreign-key id="33" parent="15" name="user_roles_role_id_fkey">
+      <ObjectId>49177</ObjectId>
       <ColNames>role_id</ColNames>
       <RefTableName>roles</RefTableName>
       <RefKeyName>roles_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="38" parent="16" name="id">
+    <column id="34" parent="16" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1094</StateNumber>
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="39" parent="16" name="username">
+    <column id="35" parent="16" name="username">
       <Position>2</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1094</StateNumber>
     </column>
-    <column id="40" parent="16" name="password">
+    <column id="36" parent="16" name="password">
       <Position>3</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1094</StateNumber>
     </column>
-    <index id="41" parent="16" name="users_pkey">
+    <index id="37" parent="16" name="users_pkey">
       <ObjectId>40990</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="42" parent="16" name="users_pkey">
+    <key id="38" parent="16" name="users_pkey">
       <ObjectId>40991</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>

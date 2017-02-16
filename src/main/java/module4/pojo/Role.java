@@ -45,23 +45,6 @@ public class Role {
         this.userSet = userSet;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Role role = (Role) o;
-
-        if (!name.equals(role.name)) return false;
-        return userSet.equals(role.userSet);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = name.hashCode();
-        result = 31 * result + userSet.hashCode();
-        return result;
-    }
 
     @Override
     public String toString() {

@@ -7,14 +7,12 @@
                  http://www.springframework.org/schema/security/spring-security.xsd">
 
     <http auto-config="true">
-        <intercept-url pattern="/" access= "hasAnyRole('ROLE_USER,ROLE_ANONYMOUS')"/>
-        <intercept-url pattern="/welcome" access="hasAnyRole('ROLE_USER,ROLE_ANONYMOUS')"/>
-        <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
-        <form-login login-page="/login.jsp" default-target-url="/welcome"
-                    authentication-failure-url="/login.jsp?error=true"/>
-        <logout logout-url="/logout"/>
-        <anonymous username="guest" granted-authority="ROLE_ANONYMOUS"/>
-        <remember-me/>
+        <intercept-url pattern="/" access="hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/welcome" access="hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/admin" access="hasAuthority('ROLE_ADMIN')"/>
+        <form-login login-page="/login" default-target-url="/welcome" authentication-failure-url="/login.jsp?error=true"
+                    username-parameter="userName" password-parameter="password"/>
+        <logout logout-url="/login?logout"/>
     </http>
 
     <authentication-manager alias="authenticationManager">

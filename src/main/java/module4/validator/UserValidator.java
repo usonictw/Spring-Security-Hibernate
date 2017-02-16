@@ -23,7 +23,7 @@ public class UserValidator implements Validator {
     public void validate(Object o, Errors errors) {
 
         User user = (User) o;
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "Required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userName", "Required");
         if (user.getUserName().length() < 8 || user.getUserName().length() > 32) {
             errors.rejectValue("userName", "Size.userForm.username");
         }
@@ -35,7 +35,7 @@ public class UserValidator implements Validator {
         if (user.getPassword().length() <= 8) {
             errors.rejectValue("password", "Size.userForm.password");
         }
-        if(user.getConfirmPassword().equals(user.getPassword())){
+        if(!user.getConfirmPassword().equals(user.getPassword())){
             errors.rejectValue("confirmPassword", "Different.userForm.password");
         }
     }
