@@ -21,7 +21,7 @@
 
 <div class="container">
     <c:if test="${pageContext.request.userPrincipal != null}">
-        <form id="logoutForm" method="post" action="${contextPath}/logout">
+        <form id="logoutForm" method="post" action="${contextPath}/login">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
         <h2> Welcome | <a onclick="document.forms['logoutForm'].submit()">logout</a></h2>

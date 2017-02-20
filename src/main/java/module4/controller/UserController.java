@@ -35,7 +35,7 @@ public class UserController {
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model){
         userValidator.validate(userForm, bindingResult);
         if (bindingResult.hasErrors()){
-            return "registration";
+            return "/registration";
         }
         userService.save(userForm);
         securityService.autoLogin(userForm.getUserName(), userForm.getConfirmPassword());
@@ -56,7 +56,7 @@ public class UserController {
 
    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     public String welcome(Model model){
-        return "/welcome";
+        return "welcome";
    }
 
    @RequestMapping(value = "/admin", method = RequestMethod.GET)

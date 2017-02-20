@@ -26,18 +26,22 @@
     <form method="post" modelAttribute="userForm" class="form-signin">
         <h2 class="form-heading"> Log in</h2>
 
-            <div class="form-group ${error ? 'has-error' : ''}">
-                <span>${massage}</span>
-                <input name="userName" type="text" class="form-control" placeholder="Username"
-                autofocus="true"/>
-                <input name="password" type="password" class="form-control" placeholder="Password"/>
-                <span>${error}</span>
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
-                <h4 class="text-center"><a href="${contextPath}/registration">Create an account</a></h4>
-            </div>
-
-    </form>
+        <div class="form-group ${error ? 'has-error' : ''}">
+            <span>${massage}</span>
+            <input name="userName" type="text" class="form-control" placeholder="Username"
+                   autofocus="true"/>
+        </div>
+        <div>
+            <span>${massage}</span>
+            <input name="password" type="password" class="form-control" placeholder="Password"/>
+        </div>
+        <div>
+            <span>${error}</span>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+        </div>
+        <h4 class="text-center"><a href="${contextPath}/registration">Create an account</a></h4>
+</form>
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

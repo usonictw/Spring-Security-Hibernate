@@ -11,8 +11,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class SecurityServiceImpl implements SecurityService{
 
-    //private static final Logger logger = LoggerF
-
     @Autowired
     private AuthenticationManager authenticationManager;
 
