@@ -15,7 +15,7 @@ public class BookController {
 
     private BookService bookService;
 
-
+    @Autowired
     public void setBookService(BookService bs) {
         this.bookService = bs;
     }

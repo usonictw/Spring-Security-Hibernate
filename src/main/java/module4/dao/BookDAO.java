@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BookDAO extends JpaRepository<Book, Integer>{
 
+    /*
     @Query("select book_title from books b where b.book_title LIKE :name")
     Book findBookByName(@Param("name") String name);
+    */
 }
