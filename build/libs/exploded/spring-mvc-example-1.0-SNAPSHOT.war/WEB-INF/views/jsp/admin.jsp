@@ -16,10 +16,10 @@
 </head>
 <div class="container">
     <c:if test="${pageContext.context.userPrincipal.name != null}">
-        <form id="logoutForm" method="post" action="${contextPath}/login">
+        <form id="logoutForm" method="post" action="${contextPath}/login?logout">
             <input type="hidden" name="${_csrf.paramaterName}" value="${_csrf.token}"/>
         </form>
-        <h2> Admin Page ${pageContext.request.userPrincipalName} | <a onclick="document.forms['logoutForm'].submit()">logout</a></h2>
+        <h2> Admin Page ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">logout</a></h2>
     </c:if>
 </div>
 

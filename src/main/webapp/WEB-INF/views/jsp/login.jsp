@@ -23,7 +23,7 @@
 <body>
 <div class="container">
 
-    <form method="post" modelAttribute="userForm" class="form-signin">
+    <form name="LoginForm"  method="post" modelAttribute="userForm" class="form-signin">
         <h2 class="form-heading"> Log in</h2>
 
         <div class="form-group ${error ? 'has-error' : ''}">
