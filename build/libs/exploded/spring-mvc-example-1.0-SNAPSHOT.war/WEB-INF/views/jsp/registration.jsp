@@ -22,7 +22,7 @@
 
 <body>
 
-<div class="container">
+<div class="container" style="width: 300px">
 
     <%--
 
@@ -74,7 +74,6 @@
         </spring:bind>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
     </form:form>
-
 
 </div>
 

@@ -21,9 +21,9 @@
 </head>
 
 <body>
-<div class="container">
+<div class="container" style="width: 300px">
 
-    <form method="post" modelAttribute="userForm" class="form-signin">
+    <form name="loginForm"  method="post" modelAttribute="userForm" class="form-signin">
         <h2 class="form-heading"> Log in</h2>
 
         <div class="form-group ${error ? 'has-error' : ''}">
@@ -35,6 +35,7 @@
             <span>${massage}</span>
             <input name="password" type="password" class="form-control" placeholder="Password"/>
         </div>
+        <div></div>
         <div>
             <span>${error}</span>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
