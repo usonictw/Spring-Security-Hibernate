@@ -21,6 +21,7 @@ public class BookServiceImpl implements BookService {
 
     @Transactional
     public void updateBook(Book book) {
+
         this.bookDAO.saveAndFlush(book);
     }
 

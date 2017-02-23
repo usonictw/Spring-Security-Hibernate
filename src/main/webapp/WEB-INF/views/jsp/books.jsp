@@ -25,89 +25,86 @@
 <a href="/">Back to main menu</a>
 <div class="container" style="width: 300px">
     <c:if test="${!empty bookList}">
-        <table class="features-table">
+        <table>
             <caption align="center">Book List</caption>
             <tr>
-                <th class="grey">id</th>
-                <th class="grey">Books Title</th>
-                <th class="grey">Books Author</th>
-                <th class="grey">Books price</th>
-                <th class="grey">Edit</th>
-                <th class="grey">Delete</th>
+                <th>id</th>
+                <th>Books Title</th>
+                <th>Books Author</th>
+                <th>Books price</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
             <c:forEach items="${bookList}" var="book">
                 <tr>
-                    <td class="grey">${book.id}</td>
-                    <td class="grey"><a href="/bookData/${book.id}" target="_blank">${book.bookTitle}</a></td>
-                    <td class="grey">${book.bookAuthor}</td>
-                    <td class="grey">${book.bookPrice}</td>
-                    <td class="grey"><a href="<c:url value="/edit/${book.id}"/>">Edit</a></td>
-                    <td class="grey"><a href="<c:url value="/remove/${book.id}"/>">Delete</a></td>
+                    <td>${book.id}</td>
+                    <td><a href="/bookData/${book.id}" target="_blank">${book.bookTitle}</a></td>
+                    <td>${book.bookAuthor}</td>
+                    <td>${book.bookPrice}</td>
+                    <td><a href="<c:url value="/edit/${book.id}"/>">Edit</a></td>
+                    <td><a href="<c:url value="/remove/${book.id}"/>">Delete</a></td>
                 </tr>
             </c:forEach>
         </table>
     </c:if>
-</div>
 
-<c:url var="addAction" value="/addBook"/>
+    <c:url var="addAction" value="/addBook"/>
 
-<div class="container">
     <h1>Add a Book</h1>
 
     <form:form action="${addAction}" commandName="book">
-        <table class="features-table">
+        <table>
             <tr>
-                <td class="grey">
+                <td style="border-radius: 10px 0 0 0;" class="radius">
                     <form:label path="id">
                         <spring:message text="ID"/>
                     </form:label>
                 </td>
-                <td class="grey">
+                <td style="border-radius: 0 10px 0 0;" class="radius">
                     <form:input path="id" readonly="true"/>
                 </td>
             </tr>
 
             <tr>
-                <td class="grey">
+                <td>
                     <form:label path="bookTitle">
                         <spring:message text="Title"/>
                     </form:label>
                 </td>
-                <td class="grey">
+                <td>
                     <form:input path="bookTitle"/>
                 </td>
             </tr>
             <tr>
-                <td class="grey">
+                <td>
                     <form:label path="bookAuthor">
                         <spring:message text="Author"/>
                     </form:label>
                 </td>
-                <td class="grey">
+                <td>
                     <form:input path="bookAuthor"/>
                 </td>
             </tr>
 
             <tr>
-                <td class="grey">
+                <td>
                     <form:label path="bookPrice">
                         <spring:message text="Price"/>
                     </form:label>
                 </td>
-                <td class="grey">
+                <td>
                     <form:input path="bookPrice"/>
                 </td>
             </tr>
             <tr>
-                <td colspan="2" class="grey">
+                <td colspan="2" style="border-radius: 0 0 10px 10px;" class="radius">
                     <c:if test="${!empty book.bookTitle}">
-                        <input type="submit" value="<spring:message text="Edit Book"/>"/>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">"Edit Book"</button>
                     </c:if>
 
                     <c:if test="${empty book.bookTitle}">
-                        <input type="submit" value="<spring:message text="Add Book"/>"/>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">"Add Book"</button>
                     </c:if>
-
                 </td>
             </tr>
         </table>

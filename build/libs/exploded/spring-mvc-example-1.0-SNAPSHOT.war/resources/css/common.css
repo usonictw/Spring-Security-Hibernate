@@ -59,78 +59,44 @@ h3		{ font-size: 16px; color: #666; }
 .t_form th { background:#efefef; }
 .t_form td, .t_form th { padding:5px; border-bottom:1px solid #666; }
 
-.features-table
-{
-    width: 100%;
-    margin: 0 auto;
-    border-collapse: separate;
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif, sans-serif;
+    font-size: 14px;
+    border-radius: 10px;
     border-spacing: 0;
-    border: 0;
-    text-shadow: 0 1px 0 #fff;
-    color: #2a2a2a;
-    background: #fafafa;
-    background-image: -moz-linear-gradient(top, #fff, #eaeaea, #fff); /* Firefox 3.6 */
-    background-image: -webkit-gradient(linear,center bottom,center top,from(#fff),color-stop(0.5, #eaeaea),to(#fff));
-    margin-top:20px;
-    margin-bottom:20px;
-}
-
-.features-table td th
-{
-    height: 50px;
-    padding: 0 20px;
-    border-bottom: 1px solid #cdcdcd;
-    box-shadow: 0 1px 0 white;
-    -moz-box-shadow: 0 1px 0 white;
-    -webkit-box-shadow: 0 1px 0 white;
     text-align: center;
-    vertical-align: middle;
-    display: table-cell;
 }
-
-.features-table tbody td
-{
-    text-align: center;
-    width: 150px;
+th {
+    background: #BCEBDD;
+    color: white;
+    text-shadow: 0 1px 1px #2D2020;
+    padding: 10px 20px;
 }
-
-
-.features-table td.grey
-{
-    background: #efefef;
-    background: rgba(144,144,144,0.15);
-    border-right: 1px solid white;
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
 }
-
-.features-table td.green
-{
-    background: #e7f3d4;
-    background: rgba(184,243,85,0.3);
+th:first-child, td:first-child {
+    text-align: left;
 }
-
-.features-table td:nowrap
-{
-    white-space: nowrap;
-}
-
-.features-table thead td
-{
-    font-size: 120%;
-    font-weight: bold;
-    -moz-border-radius-topright: 10px;
-    -moz-border-radius-topleft: 10px;
-    border-top-right-radius: 10px;
+th:first-child {
     border-top-left-radius: 10px;
-    border-top: 1px solid #eaeaea;
 }
-
-.features-table tfoot td
-{
-    font-size: 120%;
-    font-weight: bold;
-    -moz-border-radius-bottomright: 10px;
-    -moz-border-radius-bottomleft: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom: 1px solid #dadada;
+th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+}
+td {
+    padding: 10px 20px;
+    background: #F8E391;
+}
+tr:last-child td:first-child {
+    border-radius: 0px 0 0 10px;
+}
+tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+tr td:last-child {
+    border-right: none;
 }

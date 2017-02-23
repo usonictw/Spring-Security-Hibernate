@@ -27,17 +27,19 @@
         <h2 class="form-heading"> Log in</h2>
 
         <div class="form-group ${error ? 'has-error' : ''}">
-            <span>${massage}</span>
+
             <input name="userName" type="text" class="form-control" placeholder="Username"
                    autofocus="true"/>
         </div>
         <div>
-            <span>${massage}</span>
+
             <input name="password" type="password" class="form-control" placeholder="Password"/>
         </div>
         <div></div>
         <div>
+            <br/>
             <span>${error}</span>
+            <span>${massage}</span>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
         </div>

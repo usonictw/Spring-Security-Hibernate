@@ -12,7 +12,7 @@
         <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
         <form-login login-page="/login" default-target-url="/books" authentication-failure-url="/login?error=true" always-use-default-target="true"
                     username-parameter="userName" password-parameter="password"/>
-        <logout logout-url="/login?logout"/>
+        <logout logout-success-url="/login?logout"/>
     </http>
 
     <authentication-manager alias="authenticationManager">
