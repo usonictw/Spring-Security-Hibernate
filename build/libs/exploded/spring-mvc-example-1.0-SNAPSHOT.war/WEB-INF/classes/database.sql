@@ -25,11 +25,11 @@ CREATE TABLE user_roles (
 );
 
 INSERT INTO users (id, username, password)
-VALUES ('1', 'admin', '123456789');
+VALUES ('1', 'admin', '$2a$11$ioxfivpyJWbs5mNRdoFvb.HZGEV2mbagJjkeNE6es.IkPt3X4uMPC');
 
 INSERT INTO roles (id, name)
 VALUES
-('1', 'ADMIN'),
-('2', 'USER');
+('1', 'ROLE_USER'),
+('2', 'ROLE_ADMIN');
 
-INSERT INTO user_roles(user_id, role_id) VALUES ('1', '1')
+INSERT INTO user_roles(user_id, role_id) VALUES ('1', '2')

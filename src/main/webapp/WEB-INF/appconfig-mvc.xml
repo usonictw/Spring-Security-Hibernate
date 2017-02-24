@@ -14,15 +14,14 @@
                 http://www.springframework.org/schema/tx
                 http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-
     <mvc:annotation-driven/>
-    
+
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basename">
 
-                <value>classpath:validation</value>
+            <value>classpath:validation</value>
 
         </property>
     </bean>

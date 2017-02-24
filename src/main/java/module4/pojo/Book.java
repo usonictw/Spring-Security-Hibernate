@@ -69,7 +69,6 @@ public class Book implements Serializable{
         if (o == null || getClass() != o.getClass()) return false;
 
         Book book = (Book) o;
-
         if (Double.compare(book.bookPrice, bookPrice) != 0) return false;
         if (!bookTitle.equals(book.bookTitle)) return false;
         return bookAuthor.equals(book.bookAuthor);

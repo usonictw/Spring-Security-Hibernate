@@ -45,18 +45,14 @@ public class BookController {
 
     @RequestMapping(value = "/edit/{id}")
     public String editBook(@PathVariable("id") int id, Model model) {
-
         model.addAttribute("book", this.bookService.getById(id));
         model.addAttribute("bookList", this.bookService.getBooks());
-
         return "books";
     }
 
     @RequestMapping(value = "/bookData/{id}")
     public String bookData(@PathVariable("id") int id, Model model) {
-
         model.addAttribute("book", this.bookService.getById(id));
-
         return "bookdata";
     }
 }

@@ -3,7 +3,8 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<c:url var="contextPath" value="${pageContext.request.contextPath}"/>
+<c:set var="name" value="Admin"/>
 
 <html lang="en">
 
@@ -41,8 +42,12 @@
                     <td><a href="/bookData/${book.id}" target="_blank">${book.bookTitle}</a></td>
                     <td>${book.bookAuthor}</td>
                     <td>${book.bookPrice}</td>
+                    <c:if test="${pageContext.request.userPrincipal.name == name}">
                     <td><a href="<c:url value="/edit/${book.id}"/>">Edit</a></td>
+                    </c:if>
+                    <c:if test="${pageContext.request.userPrincipal.name == name}">
                     <td><a href="<c:url value="/remove/${book.id}"/>">Delete</a></td>
+                    </c:if>
                 </tr>
             </c:forEach>
         </table>

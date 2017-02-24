@@ -45,7 +45,6 @@ public class Role {
         this.userSet = userSet;
     }
 
-
     @Override
     public String toString() {
         return "Role{" +

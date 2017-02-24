@@ -18,27 +18,26 @@
                 http://www.springframework.org/schema/data/jpa
                 http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-
-   <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-       <property name="driverClassName" value="org.postgresql.Driver"/>
-       <property name="url" value="jdbc:postgresql://localhost:5432/module4_BookManager"/>
-       <property name="username" value="usonic"/>
-       <property name="password" value="123"/>
-   </bean>
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/module4_BookManager"/>
+        <property name="username" value="usonic"/>
+        <property name="password" value="123"/>
+    </bean>
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-       <property name="dataSource" ref="dataSource"/>
-       <property name="packagesToScan" value="module4.pojo"/>
-       <property name="jpaVendorAdapter">
-           <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
-       </property>
-       <property name="jpaProperties">
-           <props>
-               <prop key="hibernate.dialect">org.hibernate.dialect.PostgresPlusDialect</prop>
-               <prop key="hibernate.show_sql">true</prop>
-           </props>
-       </property>
-   </bean>
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="module4.pojo"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+        </property>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.PostgresPlusDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+    </bean>
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>

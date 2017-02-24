@@ -41,10 +41,4 @@ public class BookServiceImpl implements BookService {
         return this.bookDAO.findAll();
     }
 
-    /*
-    @Transactional
-    public Book getByName(String bookTitle){
-        return  this.bookDAO.findBookByName(bookTitle);
-    }
-    */
 }

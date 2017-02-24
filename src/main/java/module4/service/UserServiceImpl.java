@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import module4.pojo.Role;
 import module4.pojo.User;
-
 import java.util.HashSet;
 import java.util.Set;
+
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -37,6 +37,4 @@ public class UserServiceImpl implements UserService {
     public User findByUserName(String userName) {
         return userDAO.findByUserName(userName);
     }
-
-
 }

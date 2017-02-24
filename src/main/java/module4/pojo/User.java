@@ -69,7 +69,6 @@ public class User {
         this.roleSet = roleSet;
     }
 
-
 }
 
 

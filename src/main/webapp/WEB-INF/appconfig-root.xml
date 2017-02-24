@@ -15,9 +15,7 @@
                 http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
     <context:component-scan base-package="module4.*"/>
-
     <import resource="appconfig-mvc.xml"/>
     <import resource="appconfig-data.xml"/>
     <import resource="appconfig-security.xml"/>
-
 </beans>

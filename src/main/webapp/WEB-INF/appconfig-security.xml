@@ -10,7 +10,8 @@
         <intercept-url pattern="/" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
         <intercept-url pattern="/welcome" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
         <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
-        <form-login login-page="/login" default-target-url="/books" authentication-failure-url="/login?error=true" always-use-default-target="true"
+        <form-login login-page="/login" default-target-url="/books" authentication-failure-url="/login?error=true"
+                    always-use-default-target="true"
                     username-parameter="userName" password-parameter="password"/>
         <logout logout-success-url="/login?logout"/>
     </http>

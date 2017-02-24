@@ -16,7 +16,6 @@ public class UserValidator implements Validator {
 
 
     public boolean supports(Class<?> aClass) {
-        //User.class.equals(aClass);
         return User.class.isAssignableFrom(aClass);
     }
 
@@ -35,7 +34,7 @@ public class UserValidator implements Validator {
         if (user.getPassword().length() <= 8) {
             errors.rejectValue("password", "Size.userForm.password");
         }
-        if(!user.getConfirmPassword().equals(user.getPassword())){
+        if (!user.getConfirmPassword().equals(user.getPassword())) {
             errors.rejectValue("confirmPassword", "Different.userForm.password");
         }
     }
