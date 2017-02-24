@@ -26,13 +26,14 @@ public class BookServiceImpl implements BookService {
     }
 
     @Transactional
-    public void delete(int id) {
+    public void delete(Integer id) {
         this.bookDAO.delete(id);
     }
 
     @Transactional
-    public Book getById(int id) {
-        return this.bookDAO.getOne(id);
+    public Book getById(Integer id) {
+
+        return this.bookDAO.findOne(id);
     }
 
     @Transactional

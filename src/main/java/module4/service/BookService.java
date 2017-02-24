@@ -8,8 +8,8 @@ public interface BookService {
 
     void save(Book book);
     void updateBook(Book book);
-    void delete(int id);
-    Book getById(int id);
+    void delete(Integer id);
+    Book getById(Integer id);
     //Book getByName(String bookTitle);
     List<Book> getBooks();
 }
